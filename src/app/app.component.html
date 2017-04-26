@@ -1,0 +1,34 @@
+<div class="sorted-content">
+    <h2 class="text-center">Sales sorted by total</h2>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Id</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sale of salesTotal | sortTotal">
+                <td>{{sale.id}}</td>
+                <td>{{sale.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="sorted-content">
+    <h2 class="text-center">Sales grouped by month and sorted by total</h2>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Month</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sale of salesDate | sortDate">
+                <td>{{sale.date | date:'y-MM'}}</td>
+                <td>{{sale.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
