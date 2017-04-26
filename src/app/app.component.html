@@ -1,34 +1,40 @@
-<div class="sorted-content">
-    <h2 class="text-center">Sales sorted by total</h2>
-    <table class="table">
-        <thead class="thead-inverse">
-            <tr>
-                <th>Id</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let sale of salesTotal | sortTotal">
-                <td>{{sale.id}}</td>
-                <td>{{sale.total}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div class="sorted-content">
-    <h2 class="text-center">Sales grouped by month and sorted by total</h2>
-    <table class="table">
-        <thead class="thead-inverse">
-            <tr>
-                <th>Month</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let sale of salesDate | sortDate">
-                <td>{{sale.date | date:'y-MM'}}</td>
-                <td>{{sale.total}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="content-main">
+    <div class="sorted-content sorted-one">
+        <div class="title-table title">
+            Sales sorted by total
+        </div>
+        <table class="table table-one">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Id</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sale of salesTotal | sortTotal">
+                    <td><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{sale.id}}</td>
+                    <td>${{sale.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="sorted-content sorted-two">
+        <div class="title-table-two title">
+            Sales grouped by month and sorted by total
+        </div>
+        <table class="table table-two">
+            <thead class="thead-inverse-two">
+                <tr>
+                    <th>Month</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sale of salesDate | sortDate">
+                    <td><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>{{sale.date | date:'y-MM'}}</td>
+                    <td>${{sale.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
